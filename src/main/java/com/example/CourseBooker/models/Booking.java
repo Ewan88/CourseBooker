@@ -1,13 +1,28 @@
 package com.example.CourseBooker.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "bookings")
 public class Booking {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "date")
     private String date;
 
+    @JsonIgnoreProperties("booking")
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
     private Customer customer;
 
+    @JsonIgnoreProperties("booking")
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
     private Course course;
 
     public Booking(String date, Course course, Customer customer){
@@ -15,6 +30,8 @@ public class Booking {
         this.course = course;
         this.customer = customer;
     }
+
+    public Booking(){}
 
     public Long getId() {
         return id;
