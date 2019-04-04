@@ -3,9 +3,9 @@ package com.example.CourseBooker.components;
 import com.example.CourseBooker.models.Booking;
 import com.example.CourseBooker.models.Course;
 import com.example.CourseBooker.models.Customer;
-import com.example.CourseBooker.repositories.BookingRepository;
-import com.example.CourseBooker.repositories.CourseRepository;
-import com.example.CourseBooker.repositories.CustomerRepository;
+import com.example.CourseBooker.repositories.BookingRepository.BookingRepository;
+import com.example.CourseBooker.repositories.CourseRepository.CourseRepository;
+import com.example.CourseBooker.repositories.CustomerRepository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -26,7 +26,7 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader(){}
 
     public void run(ApplicationArguments applicationArguments) {
-        Course course = new Course("Intro to Java", "Glasgow");
+        Course course = new Course("Intro to Java", "Glasgow", 5);
         courseRepository.save(course);
 
         Customer customer = new Customer("Bob", "Carluke", 22);

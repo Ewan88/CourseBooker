@@ -24,10 +24,10 @@ public class Course {
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Course(String name, String town){
+    public Course(String name, String town, int rating){
         this.name = name;
         this.town = town;
-        this.rating = 0;
+        this.rating = rating;
         this.bookings = new ArrayList<Booking>();
     }
 
