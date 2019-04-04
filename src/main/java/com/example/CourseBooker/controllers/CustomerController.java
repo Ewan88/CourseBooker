@@ -2,9 +2,7 @@ package com.example.CourseBooker.controllers;
 
 import com.example.CourseBooker.models.Customer;
 import com.example.CourseBooker.repositories.CustomerRepository.CustomerRepository;
-import org.apache.tomcat.util.collections.CaseInsensitiveKeyMap;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.LinkedCaseInsensitiveMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
